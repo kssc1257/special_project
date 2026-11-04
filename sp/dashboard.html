@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College ERP Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body class="erp-dashboard">
+
+    <header class="erp-header">
+        <div class="erp-brand">
+            <div class="brand-icon">🎓</div>
+            <div>
+                <h2>College ERP</h2>
+                
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="date-display">
+                <span>▦</span>
+                <span id="currentDate">Loading date...</span>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar">F</div>
+                <div class="profile-details">
+                    <strong>Vaasudev Jain</strong>
+                    <span>Faculty Portal</span>
+                </div>
+                <button id="profileButton" class="profile-arrow"
+                        aria-label="Profile options">⌄</button>
+            </div>
+
+            <form action="/logout" method="POST">
+            <button type="submit" class="logout-button">
+             Logout
+            </button>
+            </form>
+        </div>
+    </header>
+
+    <main class="erp-main">
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-label">YOUR ACADEMIC WORKSPACE</span>
+                <h1>Welcome Back!</h1>
+                <p>
+                    Everything you need to manage your academic
+                    activities, all in one place.
+                </p>
+            </div>
+
+            <div class="hero-decoration" aria-hidden="true">
+                <span>✦</span>
+                <span>✧</span>
+                <span>＋</span>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Academic Services</h2>
+                    <p>Select a service to get started.</p>
+                </div>
+                <span class="services-count">03 SERVICES</span>
+            </div>
+
+            <div class="service-grid">
+
+                <a href="{{ url_for('attendence_page') }}"
+                   class="service-card attendance">
+                    <div class="card-top">
+                        <div class="service-icon">✓</div>
+                        <span class="card-number">01</span>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Attendance</h3>
+                        <p>
+                            View student details and record
+                            daily class attendance.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <span>Open Attendance</span>
+                        <span class="arrow-circle">→</span>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('timetable') }}"
+                   class="service-card timetable">
+                    <div class="card-top">
+                        <div class="service-icon">▦</div>
+                        <span class="card-number">02</span>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Timetable</h3>
+                        <p>
+                            Explore the weekly timetable,
+                            subjects and class timings.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <span>View Timetable</span>
+                        <span class="arrow-circle">→</span>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('academic')}}"
+                   class="service-card holidays">
+                    <div class="card-top">
+                        <div class="service-icon">☀️</div>
+                        <span class="card-number">03</span>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Academic Calendar</h3>
+                        <p>
+                            Check college holidays and
+                            upcoming important dates.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <span>View Holidays</span>
+                        <span class="arrow-circle">→</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <p id="dashboardMessage"
+           class="dashboard-message"
+           role="status"
+           aria-live="polite"></p>
+
+    </main>
+
+    <footer class="erp-footer">
+        <span>COLLEGE ERP</span>
+        <span>Academic Management Portal</span>
+    </footer>
+
+    <div class="voice-assistant-link">
+        <a href="{{ url_for('voice_page') }}">🎙️ Voice ERP Assistant</a>
+    </div>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

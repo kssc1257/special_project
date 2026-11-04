@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page background */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3fb;
+    min-height: 100vh;
+}
+
+/* Center the card horizontally and vertically */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main white login card */
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+/* College logo */
+.college-logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 25px;
+}
+
+/* Sign-in heading */
+.login-card h1 {
+    font-size: 25px;
+    color: #1e293b;
+    margin-bottom: 28px;
+}
+
+/* Username and password groups */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #334155;
+}
+
+/* Input fields */
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    font-size: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+}
+
+/* Password input and Show button */
+.password-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.password-wrapper input {
+    flex: 1;
+    min-width: 0;
+}
+
+#showPassword {
+    padding: 0 12px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Blue Sign In button */
+.signin-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.signin-button:hover {
+    background: #1d4ed8;
+}
+
+/* Authorized access notice */
+.access-notice {
+    margin-top: 25px;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Adjust layout for small screens */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 28px 20px;
+    }
+
+    .login-card h1 {
+        font-size: 22px;
+    }
+}

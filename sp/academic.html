@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Calendar | College ERP</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='academic.css') }}">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <header class="header">
+        <div class="brand">
+            <div class="brand-icon">
+                <!-- Calendar logo -->
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="16" rx="3"/>
+                    <path d="M16 3v4M8 3v4M3 10h18"/>
+                    <path d="m8 15 2 2 5-5"/>
+                </svg>
+            </div>
+
+            <div>
+                <h1>Academic Calendar</h1>
+                
+            </div>
+        </div>
+
+        <a href="{{url_for('dashboard')}}" class="back-button">
+            <!-- Back arrow -->
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+                <path d="M9 12h12"/>
+            </svg>
+            <span>Back to Dashboard</span>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Page Introduction -->
+        <section class="intro">
+            <div class="intro-icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="16" rx="3"/>
+                    <path d="M16 3v4M8 3v4M3 10h18"/>
+                    <path d="M8 14h2M14 14h2M8 17h2"/>
+                </svg>
+            </div>
+
+            <div>
+                <p class="eyebrow">COLLEGE ACADEMICS</p>
+                <h2>Academic Schedule</h2>
+                <p class="description">
+                    Stay informed about semester dates, holidays,
+                    examinations, and other academic activities.
+                </p>
+            </div>
+        </section>
+
+        <!-- Calendar Table Card -->
+        <section class="calendar-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>Calendar Details</h3>
+                    <p>All important dates and activities in one place.</p>
+                </div>
+
+                <div class="calendar-badge">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="16" rx="3"/>
+                        <path d="M16 3v4M8 3v4M3 10h18"/>
+                    </svg>
+                    <span>Academic Year</span>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="column-heading">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="1.8"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"/>
+                                        <path d="M12 7v5l3 2"/>
+                                    </svg>
+                                    Date
+                                </span>
+                            </th>
+
+                            <th>
+                                <span class="column-heading">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="1.8"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 3 14.8 8.7 21 9.6
+                                                 16.5 14 17.6 20.2
+                                                 12 17.2 6.4 20.2
+                                                 7.5 14 3 9.6 9.2 8.7Z"/>
+                                    </svg>
+                                    Activity
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="calendarTableBody">
+
+    {% if records %}
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record['Date'].strftime('%d-%m-%Y') }}</td>
+            <td>{{ record['Activity'] }}</td>
+        </tr>
+        {% endfor %}
+
+    {% else %}
+
+        <tr>
+            <td colspan="2" class="empty-cell">
+                <div class="empty-state">
+                    <h4>No Academic Activities Found</h4>
+                    <p>There are currently no records in the database.</p>
+                </div>
+            </td>
+        </tr>
+
+    {% endif %}
+
+</tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer">
+                <span class="status-dot"></span>
+                Academic information will be loaded from the college database.
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <p>College ERP <span>•</span> Academic Calendar</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
