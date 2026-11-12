@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f6fc;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(115deg, #102a43, #174c78, #2367a0);
+    color: white;
+    padding: 23px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.15);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-icon svg {
+    width: 31px;
+    height: 31px;
+}
+
+.brand h1 {
+    font-size: 27px;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+.brand p {
+    color: #d7e7f8;
+    font-size: 14px;
+}
+
+/* Back button with arrow */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 17px;
+    background: white;
+    color: #174c78;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.back-button svg {
+    width: 19px;
+    height: 19px;
+}
+
+.back-button:hover {
+    background: #e8f2ff;
+    transform: translateY(-2px);
+}
+
+/* Main page */
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 42px auto;
+}
+
+/* Introduction section */
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    margin-bottom: 30px;
+}
+
+.intro-icon {
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+    background: linear-gradient(135deg, #dbeafe, #e8eaff);
+    color: #2563a6;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #3475b7;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.intro h2 {
+    color: #102a43;
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.description {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Main card */
+.calendar-card {
+    background: white;
+    border: 1px solid #e4eaf3;
+    border-radius: 17px;
+    padding: 28px;
+    box-shadow: 0 8px 28px rgba(31, 55, 85, 0.07);
+    overflow: hidden;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.card-heading h3 {
+    font-size: 21px;
+    color: #173653;
+    margin-bottom: 7px;
+}
+
+.card-heading p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+}
+
+.calendar-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 13px;
+    border-radius: 9px;
+    background: #edf5ff;
+    color: #245c96;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.calendar-badge svg {
+    width: 19px;
+    height: 19px;
+}
+
+/* Table */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e4eaf3;
+    border-radius: 11px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+thead {
+    background: #edf4fc;
+}
+
+th {
+    color: #173653;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 18px 22px;
+    text-align: left;
+    border-bottom: 1px solid #dce6f2;
+}
+
+td {
+    padding: 18px 22px;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 14px;
+}
+
+.column-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.column-heading svg {
+    width: 19px;
+    height: 19px;
+    color: #3475b7;
+}
+
+/* Empty state before database integration */
+.empty-cell {
+    padding: 0;
+    border-bottom: none;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+}
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 17px;
+    border-radius: 18px;
+    background: #f0f5fd;
+    color: #5482bb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+.empty-state h4 {
+    font-size: 18px;
+    color: #263f5a;
+    margin-bottom: 9px;
+}
+
+.empty-state p {
+    max-width: 380px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.7;
+}
+
+/* Database information footer */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 22px;
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+/* Page footer */
+.page-footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 35px;
+    padding-bottom: 20px;
+}
+
+.page-footer span {
+    padding: 0 5px;
+}
+
+/* Mobile screen */
+@media (max-width: 650px) {
+    .header {
+        padding: 20px 5%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .brand-icon {
+        width: 47px;
+        height: 47px;
+        min-width: 47px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .intro {
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .intro-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 13px;
+    }
+
+    .intro-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .intro h2 {
+        font-size: 23px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .calendar-card {
+        padding: 19px 14px;
+    }
+
+    .card-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card-heading h3 {
+        font-size: 19px;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+
+    .empty-state {
+        padding: 35px 15px;
+    }
+}

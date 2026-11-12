@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Timetable | College ERP</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='timetable.css') }}">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-logo">ERP</div>
+            <div>
+                <h2>College ERP</h2>
+                <p></p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-button">
+        ← Back to Dashboard
+        </a>
+    </header>
+
+    <main class="container">
+
+        <section class="page-heading">
+            <p class="eyebrow">FACULTY PORTAL</p>
+            <h1>Weekly Timetable</h1>
+            <p class="subtitle">
+                View your scheduled classes for the week.
+            </p>
+        </section>
+
+        <section class="info-panel">
+            <div class="info-icon">📅</div>
+            <div>
+                <h1>Faculty Schedule</h1>
+                <p>
+                    
+                </p>
+            </div>
+        </section>
+
+        <section class="timetable-panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Class Schedule</h2>
+                    <p>Weekly class timings and subject details</p>
+                </div>
+                <span class="schedule-badge">Weekly View</span>
+            </div>
+
+            <div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                {% if records %}
+                    {% for column in records[0].keys() %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                {% else %}
+                    <th>Timetable</th>
+                {% endif %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in records %}
+                <tr>
+                    {% for value in row.values() %}
+                        <td>{{ value if value is not none else "" }}</td>
+                    {% endfor %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="100" class="placeholder">
+                        No timetable records found.
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+        </section>
+
+        
+
+    </main>
+
+</body>
+</html>

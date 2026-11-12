@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voice ERP Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='voice.css') }}">
+</head>
+
+<body>
+
+    <div class="voice-container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Voice ERP Assistant</h1>
+            <p>Your smart assistant for college ERP operations</p>
+        </div>
+
+        <!-- Microphone Section -->
+        <div class="mic-section">
+
+            <p class="instruction">
+                Click the microphone and speak your command
+            </p>
+
+            <button id="micBtn" class="mic-button"
+                    aria-label="Start voice recording">
+
+                <svg viewBox="0 0 24 24"
+                     width="42"
+                     height="42"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+                    <path d="M5 10v2a7 7 0 0 0 14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+
+                </svg>
+
+            </button>
+
+            <p id="status" class="status">
+                Ready to listen
+            </p>
+
+            <p class="timer" id="timer">
+                Recording duration: 10 seconds
+            </p>
+
+        </div>
+
+        <!-- Recognized Text -->
+        <div class="result-section">
+
+            <h2>Recognized Text</h2>
+
+            <div id="result" class="result-box">
+                Your recognized voice command will appear here.
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Powered by Faster-Whisper</p>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='voice.js') }}"></script>
+
+</body>
+</html>

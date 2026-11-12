@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+/* Main Container */
+
+.voice-container {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Header */
+
+.header h1 {
+    font-size: 30px;
+    color: #263445;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #777;
+    font-size: 15px;
+}
+
+/* Microphone Section */
+
+.mic-section {
+    margin-top: 45px;
+}
+
+.instruction {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+/* Microphone Button */
+
+.mic-button {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: none;
+    background: #16834a;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(22, 131, 74, 0.25);
+}
+
+.mic-button:hover {
+    background: #106b3c;
+    transform: scale(1.05);
+}
+
+/* Recording Animation */
+
+.mic-button.recording {
+    background: #dc3545;
+    animation: pulse 1.2s infinite;
+}
+
+.mic-button:disabled {
+    cursor: wait;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 18px rgba(220, 53, 69, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+
+}
+
+/* Status */
+
+.status {
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #16834a;
+}
+
+.timer {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Recognized Text */
+
+.result-section {
+    margin-top: 45px;
+    text-align: left;
+}
+
+.result-section h2 {
+    color: #263445;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.result-box {
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1f4f8;
+    border: 1px solid #e1e6ed;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 35px;
+    color: #999;
+    font-size: 13px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+
+    .voice-container {
+        padding: 25px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .instruction {
+        font-size: 15px;
+    }
+
+    .mic-button {
+        width: 90px;
+        height: 90px;
+    }
+
+}

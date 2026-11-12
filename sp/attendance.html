@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management | College ERP</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='attendence.css') }}">
+</head>
+
+<body>
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-logo">ERP</div>
+        <div><h2>College ERP</h2></div>
+    </div>
+
+    <a href="{{ url_for('dashboard') }}" class="back-button">
+        ← Back to Dashboard
+    </a>
+</header>
+
+<main class="container">
+
+    <section class="page-heading">
+        <div>
+            <p class="eyebrow">FACULTY PORTAL</p>
+            <h1>Attendance Management</h1>
+        </div>
+    </section>
+
+    <!-- Filters: send selections to Flask -->
+    <form action="/attendence" method="GET">
+
+<div class="field">
+    <label for="classSelect">Class / Year</label>
+
+    <select id="classSelect" name="year" required>
+        <option value="3"
+            {% if selected_year == "3" %}selected{% endif %}>
+            3rd Year
+        </option>
+    </select>
+</div>
+
+        <div class="field">
+            <label for="sectionSelect">Section</label>
+            <select id="sectionSelect" name="section" required>
+                <option value="">Select Section</option>
+                <option value="A"
+                    {% if selected_section == "A" %}selected{% endif %}>Section A</option>
+                <option value="E"
+                    {% if selected_section == "E" %}selected{% endif %}>Section E</option>
+                <option value="C"
+                    {% if selected_section == "C" %}selected{% endif %}>Section C</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="attendanceDate">Attendance Date</label>
+            <input type="date" id="attendanceDate" name="date"
+                   value="{{ selected_date }}" required>
+        </div>
+
+        <button type="submit" class="save-button">
+            Show Students
+        </button>
+    </form>
+
+    <!-- Summary -->
+    <section class="summary-grid">
+        <article class="summary-card total-card">
+            <span>Total Students</span>
+            <strong>{{ total|default(0) }}</strong>
+        </article>
+
+        <article class="summary-card present-card">
+            <span>Present</span>
+            <strong>{{ present|default(0) }}</strong>
+        </article>
+
+        <article class="summary-card absent-card">
+            <span>Absent</span>
+            <strong>{{ absent|default(0) }}</strong>
+        </article>
+    </section>
+
+    <!-- Student list and bulk save -->
+    <section class="attendance-panel">
+        <div class="panel-heading">
+            <div>
+                <h2>Student List</h2>
+                <p>Student details loaded from the database.</p>
+            </div>
+        </div>
+
+        <form action="/attendence/save" method="POST">
+
+            <input type="hidden" name="year"
+                   value="{{ selected_year }}">
+            <input type="hidden" name="section"
+                   value="{{ selected_section }}">
+            <input type="hidden" name="date"
+                   value="{{ selected_date }}">
+            <input type="hidden" name="student_count"
+                   value="{{ records|length }}">
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Attendance Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+                    {% for student in records %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ student["Enroll_No"] }}</td>
+                            <td>{{ student["Name"] }}</td>
+                            <td>
+                                <input type="hidden"
+                                       name="enrollment_{{ loop.index0 }}"
+                                       value="{{ student['Enroll_No'] }}">
+
+                                <select name="status_{{ loop.index0 }}" required>
+                                    <option value="Present"
+                                        {% if student["Status"] == "Present" %}selected{% endif %}>
+                                        Present
+                                    </option>
+                                    <option value="Absent"
+                                        {% if student["Status"] == "Absent" %}selected{% endif %}>
+                                        Absent
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="placeholder">
+                                {% if selected_year and selected_section and selected_date %}
+                                    No students found for the selected filters.
+                                {% else %}
+                                    Select a class, section and date, then click Show Students.
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bottom-actions">
+                <p>Review each student's status before saving.</p>
+
+                <button type="submit" class="save-button"
+                        {% if not records %}disabled{% endif %}>
+                    Save Attendance
+                </button>
+            </div>
+        </form>
+    </section>
+
+</main>
+</body>
+</html>
