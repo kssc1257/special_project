@@ -1,0 +1,130 @@
+text,intent
+Show me the timetable,VIEW_TIMETABLE
+Display today's timetable,VIEW_TIMETABLE
+What is my schedule today,VIEW_TIMETABLE
+Show the class schedule,VIEW_TIMETABLE
+Which classes do I have today,VIEW_TIMETABLE
+Open the timetable,VIEW_TIMETABLE
+Tell me the schedule for today,VIEW_TIMETABLE
+Display the timetable for section E,VIEW_TIMETABLE
+What classes are scheduled tomorrow,VIEW_TIMETABLE
+Show me the lecture timings,VIEW_TIMETABLE
+I want to see the timetable,VIEW_TIMETABLE
+Give me today's class timings,VIEW_TIMETABLE
+Show the schedule for section G,VIEW_TIMETABLE
+What is the first class today,VIEW_TIMETABLE
+When is my next lecture,VIEW_TIMETABLE
+Fetch the timetable for today,VIEW_TIMETABLE
+Can you display my class schedule,VIEW_TIMETABLE
+Show all scheduled lectures,VIEW_TIMETABLE
+Tell me which subject I have next,VIEW_TIMETABLE
+Get the timetable for section E,VIEW_TIMETABLE
+Show me the attendance,VIEW_ATTENDANCE
+Display today's attendance,VIEW_ATTENDANCE
+I want to check attendance,VIEW_ATTENDANCE
+Show attendance for section E,VIEW_ATTENDANCE
+Display student attendance records,VIEW_ATTENDANCE
+Open the attendance details,VIEW_ATTENDANCE
+Fetch the attendance report,VIEW_ATTENDANCE
+Show the attendance of Rahul,VIEW_ATTENDANCE
+Check attendance records for section G,VIEW_ATTENDANCE
+How many students are present,VIEW_ATTENDANCE
+How many students are absent,VIEW_ATTENDANCE
+Give me the attendance details,VIEW_ATTENDANCE
+Show the attendance report for today,VIEW_ATTENDANCE
+Retrieve the student attendance list,VIEW_ATTENDANCE
+I need to see attendance records,VIEW_ATTENDANCE
+Display the attendance status of students,VIEW_ATTENDANCE
+Check Rahul's attendance,VIEW_ATTENDANCE
+Show the present students list,VIEW_ATTENDANCE
+Get attendance information for section E,VIEW_ATTENDANCE
+Open today's attendance report,VIEW_ATTENDANCE
+Show me the academic calendar,VIEW_ACADEMIC_CALENDAR
+Display the academic calendar,VIEW_ACADEMIC_CALENDAR
+Open the holiday list,VIEW_ACADEMIC_CALENDAR
+Show upcoming holidays,VIEW_ACADEMIC_CALENDAR
+What are the holidays this semester,VIEW_ACADEMIC_CALENDAR
+Display academic events,VIEW_ACADEMIC_CALENDAR
+Show the list of college holidays,VIEW_ACADEMIC_CALENDAR
+I want to check the academic schedule,VIEW_ACADEMIC_CALENDAR
+When is the next holiday,VIEW_ACADEMIC_CALENDAR
+Give me the academic calendar details,VIEW_ACADEMIC_CALENDAR
+Fetch the holiday schedule,VIEW_ACADEMIC_CALENDAR
+Show upcoming college events,VIEW_ACADEMIC_CALENDAR
+What events are scheduled this month,VIEW_ACADEMIC_CALENDAR
+Tell me the next academic event,VIEW_ACADEMIC_CALENDAR
+Display the college calendar,VIEW_ACADEMIC_CALENDAR
+I need to see the holiday schedule,VIEW_ACADEMIC_CALENDAR
+Retrieve the list of academic activities,VIEW_ACADEMIC_CALENDAR
+Show the semester calendar,VIEW_ACADEMIC_CALENDAR
+What is the next event in college,VIEW_ACADEMIC_CALENDAR
+Get the holiday details,VIEW_ACADEMIC_CALENDAR
+Mark Rahul absent,MARK_ATTENDANCE
+Mark Rahul present,MARK_ATTENDANCE
+Update Rahul's attendance as absent,MARK_ATTENDANCE
+Record attendance for Rahul,MARK_ATTENDANCE
+Mark the student present,MARK_ATTENDANCE
+Mark the student absent,MARK_ATTENDANCE
+Update attendance for section E,MARK_ATTENDANCE
+Record Rahul as present today,MARK_ATTENDANCE
+Set Rahul's status to absent,MARK_ATTENDANCE
+Change Rahul's attendance to present,MARK_ATTENDANCE
+Mark attendance for section G,MARK_ATTENDANCE
+Record the student's absence,MARK_ATTENDANCE
+Update the attendance status,MARK_ATTENDANCE
+Mark Priya absent today,MARK_ATTENDANCE
+Mark Priya present today,MARK_ATTENDANCE
+Set the attendance status to present,MARK_ATTENDANCE
+Enter attendance for Rahul,MARK_ATTENDANCE
+Mark the student absent in section E,MARK_ATTENDANCE
+Update Priya's status to present,MARK_ATTENDANCE
+Record today's attendance for section G,MARK_ATTENDANCE
+Tell me a joke,UNKNOWN
+What is the weather today,UNKNOWN
+Play some music,UNKNOWN
+Who is the president of India,UNKNOWN
+Explain machine learning,UNKNOWN
+What is artificial intelligence,UNKNOWN
+Calculate ten plus twenty,UNKNOWN
+Open YouTube,UNKNOWN
+Tell me a story,UNKNOWN
+What is the capital of France,UNKNOWN
+Search for Python tutorials,UNKNOWN
+How are you today,UNKNOWN
+What is the time now,UNKNOWN
+Translate hello into Hindi,UNKNOWN
+Explain blockchain technology,UNKNOWN
+What is the meaning of computer vision,UNKNOWN
+Send an email to my friend,UNKNOWN
+Book a movie ticket,UNKNOWN
+Who won the cricket match,UNKNOWN
+Give me a motivational quote,UNKNOWN
+,
+Show Rahul's attendance,VIEW_ATTENDANCE
+Display Rahul's attendance for today,VIEW_ATTENDANCE
+Show attendance records of Rahul today,VIEW_ATTENDANCE
+Get Rahul's attendance details,VIEW_ATTENDANCE
+Check attendance of Rahul for section E,VIEW_ATTENDANCE
+Show attendance for section G today,VIEW_ATTENDANCE
+Show me attendance for section E,VIEW_ATTENDANCE
+What is Rahul's attendance status,VIEW_ATTENDANCE
+What event do I have on November 10,VIEW_ACADEMIC_CALENDAR
+Show the event on November 10,VIEW_ACADEMIC_CALENDAR
+Which activity is scheduled on November 10,VIEW_ACADEMIC_CALENDAR
+Show the academic event for tomorrow,VIEW_ACADEMIC_CALENDAR
+What is the next upcoming holiday,VIEW_ACADEMIC_CALENDAR
+Find the holiday on November 10,VIEW_ACADEMIC_CALENDAR
+Show all events in the academic calendar,VIEW_ACADEMIC_CALENDAR
+Display the upcoming academic event,VIEW_ACADEMIC_CALENDAR
+Show my timetable for Monday,VIEW_TIMETABLE
+Show timetable for Monday from 9:30 to 10:20,VIEW_TIMETABLE
+What is my first class on Monday,VIEW_TIMETABLE
+Show the timetable for tomorrow,VIEW_TIMETABLE
+Display my classes for Monday,VIEW_TIMETABLE
+What lecture do I have from 9:30 to 10:20,VIEW_TIMETABLE
+Mark Rahul absent for section E session 1 today,MARK_ATTENDANCE
+Mark Rahul present for section E session 1 today,MARK_ATTENDANCE
+Record Rahul as absent for section G session 2 today,MARK_ATTENDANCE
+Update Rahul's attendance to absent for section E session 1 today,MARK_ATTENDANCE
+Mark attendance for section E,MARK_ATTENDANCE
+Change Rahul's attendance to present today,MARK_ATTENDANCE
